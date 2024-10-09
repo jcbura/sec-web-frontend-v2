@@ -25,7 +25,7 @@ const TeamCard = ({ team }: Props) => {
             src={`/teams/${getDecodedName(team.name)}.png`}
             width={200}
             height={200}
-            alt={`${team.name}`}
+            alt={`${team.name} logo`}
             className="w-16 h-16"
           />
           <div className="flex flex-col justify-center items-center lg:items-start  text-nowrap uppercase">
@@ -54,7 +54,7 @@ const TeamCard = ({ team }: Props) => {
         </p>
         <Link href="/teams">
           <Image
-            src={`/sec/white/${getDecodedName(team.name)}.png`}
+            src={`/sec/${getDecodedName(team.name)}.png`}
             width={64}
             height={64}
             alt="sec logo"

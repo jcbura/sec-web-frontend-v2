@@ -42,7 +42,7 @@ const Countdown = ({ game }: Props) => {
               src={`/sec/sec.png`}
               width={200}
               height={200}
-              alt="sec"
+              alt="sec logo"
               className="w-16 h-16"
             />
             <p className="text-2xl font-bold uppercase">

@@ -40,7 +40,7 @@ const GameCard = ({ game, team }: Props) => {
               src={`/teams/${getDecodedName(opponent)}.png`}
               width={200}
               height={200}
-              alt={`${opponent}`}
+              alt={`${opponent} logo`}
               className="w-16 h-16"
             />
             <div className="flex flex-col justify-center items-center lg:items-start  text-nowrap uppercase">
@@ -56,7 +56,7 @@ const GameCard = ({ game, team }: Props) => {
               src={`/teams/${getDecodedName(opponent)}.png`}
               width={200}
               height={200}
-              alt={`${opponent}`}
+              alt={`${opponent} logo`}
               className="w-16 h-16"
             />
             <div className="flex flex-col justify-center items-center lg:items-start text-nowrap uppercase">
@@ -100,7 +100,7 @@ const GameCard = ({ game, team }: Props) => {
         {game.conference_game ? (
           <Link href="/teams">
             <Image
-              src={`/sec/white/${getDecodedName(team.name)}.png`}
+              src={`/sec/${getDecodedName(team.name)}.png`}
               width={64}
               height={64}
               alt="sec logo"

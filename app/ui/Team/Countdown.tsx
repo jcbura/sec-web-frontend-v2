@@ -58,7 +58,7 @@ const Countdown = ({ game, team }: Props) => {
               src={`/teams/${homeGame ? opponentIcon : teamIcon}.png`}
               width={200}
               height={200}
-              alt={homeGame ? opponent || "" : team.name}
+              alt={`${homeGame ? opponent || "" : team.name} logo`}
               className="w-16 h-16"
             />
             <p className="hidden lg:block text-2xl uppercase">
@@ -79,7 +79,7 @@ const Countdown = ({ game, team }: Props) => {
               src={`/teams/${homeGame ? teamIcon : opponentIcon}.png`}
               width={200}
               height={200}
-              alt={homeGame ? team.name : opponent || ""}
+              alt={`${homeGame ? team.name : opponent || ""} logo`}
               className="w-16 h-16"
             />
             <p className="hidden lg:block text-2xl uppercase">
