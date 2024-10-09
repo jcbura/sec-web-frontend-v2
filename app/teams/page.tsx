@@ -1,10 +1,10 @@
-import { fetchSECCGame, fetchTeams, getNextGameArray } from "./lib/data";
-import { Game, NextGame, Team } from "./lib/types";
-import Footer from "./ui/Footer";
-import Header from "./ui/Header";
-import TeamsComponent from "./ui/Teams/TeamsComponent";
+import { fetchSECCGame, fetchTeams, getNextGameArray } from "../lib/data";
+import { Game, NextGame, Team } from "../lib/types";
+import Footer from "../ui/Footer";
+import Header from "../ui/Header";
+import TeamsComponent from "../ui/Teams/TeamsComponent";
 
-const Home = async () => {
+const Page = async () => {
   const game: Game = await fetchSECCGame();
 
   const alphaTeams: Team[] = await fetchTeams("alpha");
@@ -25,4 +25,4 @@ const Home = async () => {
   );
 };
 
-export default Home;
+export default Page;
