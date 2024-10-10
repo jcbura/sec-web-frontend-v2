@@ -40,12 +40,12 @@ const Header = async ({ team }: Props) => {
       >
         <div className="w-full flex flex-row justify-start items-center">
           {team ? (
-            <h1 className="flex-1 text-3xl text-white text-nowrap uppercase">
+            <h1 className="flex-1 text-3xl text-white uppercase">
               {team.team_rank} <span className="font-bold">{team.name}</span>{" "}
               {team.mascot}
             </h1>
           ) : (
-            <h1 className="flex-1 text-3xl text-white text-nowrap uppercase">
+            <h1 className="flex-1 text-3xl text-white uppercase">
               <span className="font-bold">southeastern</span> conference
             </h1>
           )}
@@ -68,13 +68,13 @@ const Header = async ({ team }: Props) => {
           )}
         </div>
       </div>
-      <div className="w-full h-[55px] px-6 flex flex-row justify-center items-center bg-neutral-400">
+      <div className="w-full h-[55px] px-6 flex flex-row justify-center items-center bg-neutral-350">
         <nav className="w-full py-3 flex flex-row justify-center items-center">
           <ul className="overflow-x-auto no-scrollbar w-full flex flex-row gap-3 justify-start items-center text-white">
             <li className="px-2 py-1">
               <Link
                 href="/teams"
-                className="text-lg hover:text-blue-500 transition-colors duration-150 text-nowrap uppercase"
+                className="text-lg hover:text-blue-600 transition-colors duration-150 text-nowrap uppercase"
               >
                 <span className="font-bold">southeastern</span> conference
               </Link>
@@ -83,7 +83,7 @@ const Header = async ({ team }: Props) => {
               <li key={team.id} className="px-2 py-1">
                 <Link
                   href={`/teams/${getDecodedName(team.name)}`}
-                  className="text-lg hover:text-blue-500 transition-colors duration-150 text-nowrap uppercase"
+                  className="text-lg hover:text-blue-600 transition-colors duration-150 text-nowrap uppercase"
                 >
                   {team.team_rank}{" "}
                   <span className="font-bold">{team.name}</span> {team.mascot}

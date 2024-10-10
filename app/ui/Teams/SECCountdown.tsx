@@ -34,7 +34,7 @@ const Countdown = ({ game }: Props) => {
   }, [game.game_date, game.game_time]);
 
   return (
-    <div className="w-full max-w-[700px] lg:max-w-[1200px] flex flex-col justify-center items-center border border-neutral-400">
+    <div className="w-full max-w-[700px] lg:max-w-[1200px] flex flex-col justify-center items-center border border-neutral-350">
       <section className="w-full lg:max-w-[900px] h-full pt-2 flex flex-col gap-3 justify-center lg:justify-start items-center">
         <div className="w-full px-6 flex flex-row justify-center items-center">
           <div className="flex flex-col justify-center items-center">
@@ -50,16 +50,16 @@ const Countdown = ({ game }: Props) => {
             </p>
           </div>
         </div>
-        <ol className="w-full flex flex-row justify-center items-center border-neutral-400 border-t border-b-0 border-l-0 lg:border-l border-r-0 lg:border-r">
-          <li className="flex-1 py-2 flex flex-col justify-center items-center uppercase border-neutral-400 border-t-0 border-b-0 border-l-0 border-r">
+        <ol className="w-full flex flex-row justify-center items-center border-neutral-350 border-t border-b-0 border-l-0 lg:border-l border-r-0 lg:border-r">
+          <li className="flex-1 py-2 flex flex-col justify-center items-center uppercase border-neutral-350 border-t-0 border-b-0 border-l-0 border-r">
             <p className="text-2xl font-bold">{timeLeft.days}</p>
             <p className="text-lg">days</p>
           </li>
-          <li className="flex-1 py-2 flex flex-col justify-center items-center uppercase border-neutral-400 border-t-0 border-b-0 border-l-0 border-r">
+          <li className="flex-1 py-2 flex flex-col justify-center items-center uppercase border-neutral-350 border-t-0 border-b-0 border-l-0 border-r">
             <p className="text-2xl font-bold">{timeLeft.hours}</p>
             <p className="text-lg">hour</p>
           </li>
-          <li className="flex-1 py-2 flex flex-col justify-center items-center uppercase border-neutral-400 border-t-0 border-b-0 border-l-0 border-r">
+          <li className="flex-1 py-2 flex flex-col justify-center items-center uppercase border-neutral-350 border-t-0 border-b-0 border-l-0 border-r">
             <p className="text-2xl font-bold">{timeLeft.minutes}</p>
             <p className="text-lg">minutes</p>
           </li>
@@ -69,11 +69,11 @@ const Countdown = ({ game }: Props) => {
           </li>
         </ol>
       </section>
-      <section className="w-full h-12 px-6 flex flex-row justify-start items-center bg-neutral-400">
-        <p className="block lg:hidden text-2xl text-white text-nowrap uppercase">
+      <section className="w-full h-12 px-6 flex flex-row justify-start items-center bg-neutral-350">
+        <p className="block lg:hidden text-2xl text-white uppercase">
           <span className="font-bold">{time}</span> {day}, {date}
         </p>
-        <p className="hidden lg:block text-2xl text-white text-nowrap uppercase">
+        <p className="hidden lg:block text-2xl text-white uppercase">
           <span className="font-bold">{time}</span> {longDay}, {longDate}
         </p>
       </section>

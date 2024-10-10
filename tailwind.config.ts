@@ -32,6 +32,7 @@ const config: Config = {
         vanderbilt: "#cfae70",
         "sec-primary": "#002d74",
         "sec-secondary": "#ffd24f",
+        "neutral-350": "#bcbcbc",
       },
     },
   },

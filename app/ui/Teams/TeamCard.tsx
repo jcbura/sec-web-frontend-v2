@@ -15,7 +15,7 @@ const TeamCard = ({ team }: Props) => {
   const time = formatTime(game?.game_time || "");
 
   return (
-    <li className="w-full max-w-[700px] lg:max-w-[1200px] h-full flex flex-col justify-center items-center border border-neutral-400">
+    <li className="w-full max-w-[700px] lg:max-w-[1200px] h-full flex flex-col justify-center items-center border border-neutral-350">
       <section className="w-full h-full px-6 py-2 flex flex-col lg:flex-row gap-3 justify-center lg:justify-start items-center">
         <Link
           href={`/teams/${getDecodedName(team.name)}`}
@@ -28,7 +28,7 @@ const TeamCard = ({ team }: Props) => {
             alt={`${team.name} logo`}
             className="w-16 h-16"
           />
-          <div className="flex flex-col justify-center items-center lg:items-start  text-nowrap uppercase">
+          <div className="flex flex-col justify-center items-center lg:items-start uppercase">
             <p className="hidden lg:block text-2xl">
               {team.team_rank} <span className="font-bold">{team.name}</span>{" "}
               {team.mascot}
@@ -45,11 +45,11 @@ const TeamCard = ({ team }: Props) => {
           </p>
         </div>
       </section>
-      <section className="w-full h-12 px-6 flex flex-row justify-between items-center bg-neutral-400">
-        <p className="block lg:hidden text-2xl text-white text-nowrap uppercase">
+      <section className="w-full h-12 px-6 flex flex-row justify-between items-center bg-neutral-350">
+        <p className="block lg:hidden text-2xl text-white uppercase">
           <span className="font-bold">{time}</span> {day}, {date}
         </p>
-        <p className="hidden lg:block text-2xl text-white text-nowrap uppercase">
+        <p className="hidden lg:block text-2xl text-white uppercase">
           <span className="font-bold">{time}</span> {longDay}, {longDate}
         </p>
         <Link href="/teams">

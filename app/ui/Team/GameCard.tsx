@@ -29,7 +29,7 @@ const GameCard = ({ game, team }: Props) => {
   const time = formatTime(game.game_time || "");
 
   return (
-    <li className="w-full max-w-[700px] lg:max-w-[1200px] h-full flex flex-col justify-center items-center border border-neutral-400">
+    <li className="w-full max-w-[700px] lg:max-w-[1200px] h-full flex flex-col justify-center items-center border border-neutral-350">
       <section className="w-full h-full px-6 py-2 flex flex-col lg:flex-row gap-3 justify-center lg:justify-start items-center">
         {game.conference_game ? (
           <Link
@@ -43,7 +43,7 @@ const GameCard = ({ game, team }: Props) => {
               alt={`${opponent} logo`}
               className="w-16 h-16"
             />
-            <div className="flex flex-col justify-center items-center lg:items-start  text-nowrap uppercase">
+            <div className="flex flex-col justify-center items-center lg:items-start uppercase">
               <p className="text-2xl">
                 {opponentRank} <span className="font-bold">{opponent}</span>
               </p>
@@ -59,7 +59,7 @@ const GameCard = ({ game, team }: Props) => {
               alt={`${opponent} logo`}
               className="w-16 h-16"
             />
-            <div className="flex flex-col justify-center items-center lg:items-start text-nowrap uppercase">
+            <div className="flex flex-col justify-center items-center lg:items-start uppercase">
               <p className="text-2xl">
                 {opponentRank} <span className="font-bold">{opponent}</span>
               </p>
@@ -71,16 +71,16 @@ const GameCard = ({ game, team }: Props) => {
           <p className="text-2xl font-bold">
             {game.neutral_site ? "neutral" : homeGame ? "home" : "away"}
           </p>
-          <p className="text-lg">{game.stadium}</p>
+          <p className="text-lg text-center">{game.stadium}</p>
         </div>
       </section>
-      <section className="w-full h-12 px-6 flex flex-row justify-between items-center bg-neutral-400">
+      <section className="w-full h-12 px-6 flex flex-row justify-between items-center bg-neutral-350">
         {game.game_played ? (
           <p className="text-2xl text-white uppercase">
             <span
               className={clsx("font-bold", {
-                "text-red-300": gameResult === "l",
-                "text-green-300": gameResult === "w",
+                "text-red-600": gameResult === "l",
+                "text-green-600": gameResult === "w",
               })}
             >
               {gameResult}
@@ -89,10 +89,10 @@ const GameCard = ({ game, team }: Props) => {
           </p>
         ) : (
           <>
-            <p className="block lg:hidden text-2xl text-white text-nowrap uppercase">
+            <p className="block lg:hidden text-2xl text-white uppercase">
               <span className="font-bold">{time}</span> {day}, {date}
             </p>
-            <p className="hidden lg:block text-2xl text-white text-nowrap uppercase">
+            <p className="hidden lg:block text-2xl text-white uppercase">
               <span className="font-bold">{time}</span> {longDay}, {longDate}
             </p>
           </>
