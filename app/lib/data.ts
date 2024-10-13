@@ -3,7 +3,7 @@ import { Game, NextGame, SortEnum, Team, TeamEnum } from "./types";
 import { getDecodedName } from "./scripts";
 
 export const fetchTeams = async (sort?: SortEnum) => {
-  // noStore();
+  noStore();
   try {
     const res = await fetch(
       `https://sec-web-backend-production.up.railway.app/api/teams${
@@ -22,7 +22,7 @@ export const fetchTeams = async (sort?: SortEnum) => {
 };
 
 export const fetchTeam = async (team: TeamEnum) => {
-  // noStore();
+  noStore();
   try {
     const res = await fetch(
       `https://sec-web-backend-production.up.railway.app/api/teams/${team}`
@@ -39,7 +39,7 @@ export const fetchTeam = async (team: TeamEnum) => {
 };
 
 export const fetchGames = async () => {
-  // noStore();
+  noStore();
   try {
     const res = await fetch(
       "https://sec-web-backend-production.up.railway.app/api/games"
@@ -56,7 +56,7 @@ export const fetchGames = async () => {
 };
 
 export const fetchNextGame = async (team: TeamEnum) => {
-  // noStore();
+  noStore();
   try {
     const res = await fetch(
       `https://sec-web-backend-production.up.railway.app/api/games/${team}`
@@ -73,7 +73,7 @@ export const fetchNextGame = async (team: TeamEnum) => {
 };
 
 export const fetchSECCGame = async () => {
-  // noStore();
+  noStore();
   try {
     const res = await fetch(
       `https://sec-web-backend-production.up.railway.app/api/games/sec`
@@ -90,7 +90,7 @@ export const fetchSECCGame = async () => {
 };
 
 export const searchTeam = async (team: string) => {
-  // noStore();
+  noStore();
   try {
     const res = await fetch(
       `https://sec-web-backend-production.up.railway.app/api/teams/search?name=${team}`
@@ -107,7 +107,7 @@ export const searchTeam = async (team: string) => {
 };
 
 export const getNextGameArray = async (teams: Team[]) => {
-  // noStore();
+  noStore();
   const nextGames: NextGame[] = await Promise.all(
     teams.map(async (team) => {
       const nextGame = await fetchNextGame(
