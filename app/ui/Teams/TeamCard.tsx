@@ -15,7 +15,7 @@ const TeamCard = ({ team }: Props) => {
   const time = formatTime(game?.game_time || "");
 
   return (
-    <li className="w-full max-w-[700px] lg:max-w-[1200px] h-full flex flex-col justify-center items-center border border-neutral-350">
+    <li className="w-full max-w-[700px] lg:max-w-[1200px] h-full flex flex-col justify-center items-center border border-neutral-350 dark:border-neutral-700 dark:bg-neutral-700">
       <section className="w-full h-full px-6 py-2 flex flex-col lg:flex-row gap-3 justify-center lg:justify-start items-center">
         <Link
           href={`/teams/${getDecodedName(team.name)}`}
@@ -45,7 +45,7 @@ const TeamCard = ({ team }: Props) => {
           </p>
         </div>
       </section>
-      <section className="w-full h-12 px-6 flex flex-row justify-between items-center bg-neutral-350">
+      <section className="w-full h-12 px-6 flex flex-row justify-between items-center bg-neutral-350 dark:bg-neutral-800">
         <p className="block lg:hidden text-2xl text-white uppercase">
           <span className="font-bold">{time}</span> {day}, {date}
         </p>

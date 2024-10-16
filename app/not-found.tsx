@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const NotFound = () => {
   return (
-    <main className="w-screen h-screen flex flex-col gap-3 justify-center items-center">
+    <main className="bg-white dark:bg-neutral-800 text-black dark:text-white w-screen h-screen flex flex-col gap-3 justify-center items-center">
       <p className="text-2xl font-bold">404</p>
       <h2 className="text-6xl font-bold uppercase">page not found</h2>
       <p className="text-2xl">
@@ -10,7 +10,7 @@ const NotFound = () => {
       </p>
       <Link
         href="/"
-        className="px-2 py-1 bg-sec-primary text-2xl text-sec-secondary font-bold uppercase rounded-md"
+        className="px-2 py-1 dark:bg-white bg-sec-primary text-2xl dark:text-sec-primary text-sec-secondary font-bold uppercase rounded-md"
       >
         go back home
       </Link>

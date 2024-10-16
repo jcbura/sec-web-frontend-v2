@@ -4,6 +4,7 @@ import { Team } from "../lib/types";
 import { getDecodedName } from "../lib/scripts";
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 interface Props {
   team?: Team;
@@ -68,30 +69,33 @@ const Header = async ({ team }: Props) => {
           )}
         </div>
       </div>
-      <div className="w-full h-[55px] px-6 flex flex-row justify-center items-center bg-neutral-350">
-        <nav className="w-full py-3 flex flex-row justify-center items-center">
-          <ul className="overflow-x-auto no-scrollbar w-full flex flex-row gap-3 justify-start items-center text-white">
-            <li className="px-2 py-1">
-              <Link
-                href="/teams"
-                className="text-lg hover:text-blue-600 transition-colors duration-150 text-nowrap uppercase"
-              >
-                <span className="font-bold">southeastern</span> conference
-              </Link>
-            </li>
-            {teams.map((team) => (
-              <li key={team.id} className="px-2 py-1">
+      <div className="w-full h-[55px] px-6 flex flex-row justify-center items-center bg-neutral-350 dark:bg-neutral-700">
+        <div className="w-full py-3 flex flex-row gap-6 justify-center items-center">
+          <ThemeToggle />
+          <nav className="overflow-x-auto no-scrollbar flex-1 flex flex-row justify-center items-center">
+            <ul className="w-full flex flex-row gap-6 justify-start items-center text-white">
+              <li>
                 <Link
-                  href={`/teams/${getDecodedName(team.name)}`}
-                  className="text-lg hover:text-blue-600 transition-colors duration-150 text-nowrap uppercase"
+                  href="/teams"
+                  className="text-lg hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-150 text-nowrap uppercase"
                 >
-                  {team.team_rank}{" "}
-                  <span className="font-bold">{team.name}</span> {team.mascot}
+                  <span className="font-bold">southeastern</span> conference
                 </Link>
               </li>
-            ))}
-          </ul>
-        </nav>
+              {teams.map((team) => (
+                <li key={team.id}>
+                  <Link
+                    href={`/teams/${getDecodedName(team.name)}`}
+                    className="text-lg hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-150 text-nowrap uppercase"
+                  >
+                    {team.team_rank}{" "}
+                    <span className="font-bold">{team.name}</span> {team.mascot}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
   );

@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Rajdhani } from "next/font/google";
+import Providers from "./providers";
 
 const raj = Rajdhani({
   subsets: ["latin"],
@@ -19,8 +20,12 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang="en">
-      <body className={`${raj.className} font-medium`}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${raj.className} font-medium dark:bg-neutral-800 dark:text-white`}
+      >
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 };
