@@ -3,7 +3,7 @@
 import { NextGame, OOCRecord } from "@/app/lib/types";
 import { useTeam } from "./TeamsContext";
 import clsx from "clsx";
-import { countRankedTeams, getCombinedRecord } from "@/app/lib/scripts";
+import { countRankedTeams } from "@/app/lib/scripts";
 
 interface Props {
   alpha: NextGame[];
@@ -88,13 +88,13 @@ const Sortbar = ({ alpha, rank, record, oocRecord }: Props) => {
           <>
             <p className="hidden lg:flex text-2xl text-white uppercase">
               <span className="font-bold">
-                {oocRecord?.ooc_wins} - {oocRecord?.ooc_losses}
+                {oocRecord.ooc_wins} - {oocRecord.ooc_losses}
               </span>
               &nbsp;out of conference record
             </p>
             <p className="lg:hidden text-2xl text-white uppercase">
               <span className="font-bold">
-                {oocRecord?.ooc_wins} - {oocRecord?.ooc_losses}
+                {oocRecord.ooc_wins} - {oocRecord.ooc_losses}
               </span>{" "}
               ooc record
             </p>
