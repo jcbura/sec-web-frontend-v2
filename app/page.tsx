@@ -1,5 +1,10 @@
-import { fetchSECCGame, fetchTeams, getNextGameArray } from "./lib/data";
-import { Game, NextGame, Team } from "./lib/types";
+import {
+  fetchOOCRecord,
+  fetchSECCGame,
+  fetchTeams,
+  getNextGameArray,
+} from "./lib/data";
+import { Game, NextGame, OOCRecord, Team } from "./lib/types";
 import Footer from "./ui/Footer";
 import Header from "./ui/Header";
 import TeamsComponent from "./ui/Teams/TeamsComponent";
@@ -16,10 +21,18 @@ const Home = async () => {
   const recordTeams: Team[] = await fetchTeams("record");
   const record: NextGame[] = await getNextGameArray(recordTeams);
 
+  const oocRecord: OOCRecord = await fetchOOCRecord();
+
   return (
     <>
       <Header />
-      <TeamsComponent game={game} alpha={alpha} rank={rank} record={record} />
+      <TeamsComponent
+        game={game}
+        alpha={alpha}
+        rank={rank}
+        record={record}
+        oocRecord={oocRecord}
+      />
       <Footer />
     </>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { NextGame } from "@/app/lib/types";
+import { NextGame, OOCRecord } from "@/app/lib/types";
 import { useTeam } from "./TeamsContext";
 import clsx from "clsx";
 import { countRankedTeams, getCombinedRecord } from "@/app/lib/scripts";
@@ -9,13 +9,13 @@ interface Props {
   alpha: NextGame[];
   rank: NextGame[];
   record: NextGame[];
+  oocRecord: OOCRecord;
 }
 
-const Sortbar = ({ alpha, rank, record }: Props) => {
+const Sortbar = ({ alpha, rank, record, oocRecord }: Props) => {
   const { teams, setTeams } = useTeam();
 
   const rankedTeams = countRankedTeams(alpha);
-  const { totalWins, totalLosses } = getCombinedRecord(alpha);
 
   return (
     <div className="w-full max-w-[700px] lg:max-w-[1200px] flex flex-col justify-center items-center border border-neutral-350 dark:border-neutral-700 dark:bg-neutral-700">
@@ -85,12 +85,20 @@ const Sortbar = ({ alpha, rank, record }: Props) => {
           </p>
         ) : null}
         {teams === record ? (
-          <p className="text-2xl text-white uppercase">
-            <span className="font-bold">
-              {totalWins} - {totalLosses}
-            </span>{" "}
-            combined record
-          </p>
+          <>
+            <p className="hidden lg:flex text-2xl text-white uppercase">
+              <span className="font-bold">
+                {oocRecord?.ooc_wins} - {oocRecord?.ooc_losses}
+              </span>
+              &nbsp;out of conference record
+            </p>
+            <p className="lg:hidden text-2xl text-white uppercase">
+              <span className="font-bold">
+                {oocRecord?.ooc_wins} - {oocRecord?.ooc_losses}
+              </span>{" "}
+              ooc record
+            </p>
+          </>
         ) : null}
       </div>
     </div>

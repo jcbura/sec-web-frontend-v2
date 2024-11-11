@@ -1,4 +1,4 @@
-import { Game, NextGame } from "@/app/lib/types";
+import { Game, NextGame, OOCRecord } from "@/app/lib/types";
 import { TeamProvider } from "./TeamsContext";
 import SECCountdown from "./SECCountdown";
 import Sortbar from "./Sortbar";
@@ -9,9 +9,10 @@ interface Props {
   alpha: NextGame[];
   rank: NextGame[];
   record: NextGame[];
+  oocRecord: OOCRecord;
 }
 
-const TeamsComponent = ({ game, alpha, rank, record }: Props) => {
+const TeamsComponent = ({ game, alpha, rank, record, oocRecord }: Props) => {
   return (
     <main className="w-full h-full px-6 flex flex-col justify-center items-center">
       <div className="w-full h-full py-6 flex flex-col gap-12 justify-center items-center">
@@ -20,7 +21,12 @@ const TeamsComponent = ({ game, alpha, rank, record }: Props) => {
         </section>
         <TeamProvider defaultTeams={alpha}>
           <section className="w-full h-full flex flex-row justify-center items-cente">
-            <Sortbar alpha={alpha} rank={rank} record={record} />
+            <Sortbar
+              alpha={alpha}
+              rank={rank}
+              record={record}
+              oocRecord={oocRecord}
+            />
           </section>
           <section className="w-full h-full flex flex-row justify-center items-center">
             <TeamsList />
