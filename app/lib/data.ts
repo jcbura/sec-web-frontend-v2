@@ -1,5 +1,5 @@
 import { unstable_noStore as noStore } from "next/cache";
-import { Game, NextGame, SortEnum, Team, TeamEnum } from "./types";
+import { Game, NextGame, OOCRecord, SortEnum, Team, TeamEnum } from "./types";
 import { getDecodedName } from "./scripts";
 
 const API_BASE = process.env.API_BASE;
@@ -51,6 +51,22 @@ export const fetchNextGame = async (team: TeamEnum) => {
   } catch (error) {
     console.error("Error:", error);
     throw new Error("Failed to fetch game.");
+  }
+};
+
+export const fetchOOCRecord = async () => {
+  noStore();
+
+  try {
+    const res = await fetch(`${API_BASE}/api/games/ooc`);
+    if (!res.ok) {
+      throw new Error(`Failed to fetch data: ${res.statusText}`);
+    }
+    const repo: OOCRecord = await res.json();
+    return repo;
+  } catch (error) {
+    console.error("Error:", error);
+    throw new Error("Failed to fetch out of conference record.");
   }
 };
 

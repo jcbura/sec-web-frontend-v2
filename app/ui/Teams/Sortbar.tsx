@@ -81,7 +81,7 @@ const Sortbar = ({ alpha, rank, record }: Props) => {
         ) : null}
         {teams === rank ? (
           <p className="text-2xl text-white uppercase">
-            <span className="font-bold">{rankedTeams}</span> ap top 25 teams
+            <span className="font-bold">{rankedTeams}</span> cfp top 25 teams
           </p>
         ) : null}
         {teams === record ? (
