@@ -71,6 +71,8 @@ export const fetchOOCRecord = async () => {
 };
 
 export const fetchSECCGame = async () => {
+  noStore();
+
   try {
     const res = await fetch(`${API_BASE}/api/games/sec`);
     if (!res.ok) {
