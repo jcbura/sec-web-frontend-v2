@@ -90,23 +90,6 @@ const Countdown = ({ game }: Props) => {
           <div className="w-full px-6 flex flex-row justify-center items-center">
             <div className="flex-[2_2_0%] flex flex-col justify-center items-center">
               <Image
-                src={`/teams/${homeTeam}.png`}
-                width={200}
-                height={200}
-                alt={`${game.home_team} logo`}
-                className="w-16 h-16"
-              />
-              <p className="hidden lg:block text-2xl uppercase">
-                {game.home_rank}{" "}
-                <span className="font-bold">{game.home_team}</span>{" "}
-                {game.home_mascot}
-              </p>
-            </div>
-            <div className="flex-1 flex flex-col justify-center items-center">
-              <p className="text-2xl font-bold uppercase">vs</p>
-            </div>
-            <div className="flex-[2_2_0%] flex flex-col justify-center items-center">
-              <Image
                 src={`/teams/${awayTeam}.png`}
                 width={200}
                 height={200}
@@ -117,6 +100,23 @@ const Countdown = ({ game }: Props) => {
                 {game.away_rank}{" "}
                 <span className="font-bold">{game.away_team}</span>{" "}
                 {game.away_mascot}
+              </p>
+            </div>
+            <div className="flex-1 flex flex-col justify-center items-center">
+              <p className="text-2xl font-bold uppercase">vs</p>
+            </div>
+            <div className="flex-[2_2_0%] flex flex-col justify-center items-center">
+              <Image
+                src={`/teams/${homeTeam}.png`}
+                width={200}
+                height={200}
+                alt={`${game.home_team} logo`}
+                className="w-16 h-16"
+              />
+              <p className="hidden lg:block text-2xl uppercase">
+                {game.home_rank}{" "}
+                <span className="font-bold">{game.home_team}</span>{" "}
+                {game.home_mascot}
               </p>
             </div>
           </div>
